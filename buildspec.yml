@@ -3,14 +3,15 @@ version: 0.2
 phases:
   install: 
     runtime-versions:
-      nodejs: 10
+      nodejs: 10.x  # Use a specific minor version if needed
   build:
     commands:
-      - echo "Package & Dependicies are getting installed"
-      - npm -f install
+      - echo "Packages & Dependencies are getting installed"
+      - npm install  # Removed the -f flag
       - echo "Packages have been installed"
-      - echon "Storing Build Artifact to the Location"
+      - echo "Storing Build Artifact to the Location"  # Fixed typo
+
 artifacts:
   type: zip
   paths:
-    - '*'
+    - '*'  # Adjust this if you only want to include specific files
